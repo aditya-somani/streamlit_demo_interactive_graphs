@@ -35,11 +35,6 @@ st.subheader("Pie Chart with modification")
 fig=px.pie(df,values="total_bill",names="day",opacity=.8,color_discrete_sequence=px.colors.sequential.RdBu)
 st.plotly_chart(fig)
 
-st.subheader("Histogram")
-x1=np.random.randn(100)
-x2=np.random.randn(100)
-x3=np.random.randn(100)
-
 # This was running alright on localhost but is giving error on stream lit 
 
 #Here is the traceback :-
@@ -56,6 +51,10 @@ x3=np.random.randn(100)
 
 #So, it's telling it did not find scipy due to which i am absolutely clueless
 
+# st.subheader("Histogram")
+# x1=np.random.randn(100)
+# x2=np.random.randn(100)
+# x3=np.random.randn(100)
 # hist_data=[x1,x2,x3]
 # grp_labels=["Grp-1","Grp-2","Grp-3"]
 # fig=ff.create_distplot(hist_data,grp_labels,bin_size=[.1,.25,.5])

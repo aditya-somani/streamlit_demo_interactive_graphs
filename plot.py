@@ -4,7 +4,7 @@ import altair as alt
 import numpy as np
 import plotly.express as px
 import plotly.figure_factory as ff
-import scipy as sp
+# import scipy as sp -> see last
 
 st.header("Altair Scatter Plot")
 chart_data=pd.DataFrame(np.random.randn(100,5),columns=['a','b','c','d','e'])
@@ -40,7 +40,23 @@ x1=np.random.randn(100)
 x2=np.random.randn(100)
 x3=np.random.randn(100)
 
-hist_data=[x1,x2,x3]
-grp_labels=["Grp-1","Grp-2","Grp-3"]
-fig=ff.create_distplot(hist_data,grp_labels,bin_size=[.1,.25,.5])
-st.plotly_chart(fig)
+# This was running alright on localhost but is giving error on stream lit 
+
+#Here is the traceback :-
+
+# File "/home/adminuser/venv/lib/python3.11/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 600, in _run_script
+#     exec(code, module.__dict__)
+# File "/mount/src/streamlit_demo_interactive_graphs/plot.py", line 45, in <module>
+#     fig=ff.create_distplot(hist_data,grp_labels,bin_size=[.1,.25,.5])
+#         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# File "/home/adminuser/venv/lib/python3.11/site-packages/plotly/figure_factory/_distplot.py", line 178, in create_distplot
+#     validate_distplot(hist_data, curve_type)
+# File "/home/adminuser/venv/lib/python3.11/site-packages/plotly/figure_factory/_distplot.py", line 47, in validate_distplot
+#     raise ImportError("FigureFactory.create_distplot requires scipy")
+
+#So, it's telling it did not find scipy due to which i am absolutely clueless
+
+# hist_data=[x1,x2,x3]
+# grp_labels=["Grp-1","Grp-2","Grp-3"]
+# fig=ff.create_distplot(hist_data,grp_labels,bin_size=[.1,.25,.5])
+# st.plotly_chart(fig)

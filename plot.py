@@ -51,6 +51,8 @@ st.plotly_chart(fig)
 
 #So, it's telling it did not find scipy due to which i am absolutely clueless
 
+#The problem got solved :- I just needed to include scipy in my requirements.txt but not import it here , this worked and solved the error I was getting.
+
 st.subheader("Histogram")
 x1=np.random.randn(100)
 x2=np.random.randn(100)

@@ -4,6 +4,7 @@ import altair as alt
 import numpy as np
 import plotly.express as px
 import plotly.figure_factory as ff
+import scipy
 
 st.header("Altair Scatter Plot")
 chart_data=pd.DataFrame(np.random.randn(100,5),columns=['a','b','c','d','e'])
